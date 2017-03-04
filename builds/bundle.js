@@ -11365,8 +11365,10 @@ var _Button2 = _interopRequireDefault(_Button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var button = new _Button2.default('google.com');
-button.render('a');
+window.onload = function () {
+  var button = new _Button2.default('google.com');
+  button.render('.button-area');
+};
 
 /***/ })
 /******/ ]);
