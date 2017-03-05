@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
   entry: './src',
   output: {
@@ -5,6 +7,13 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: 'builds/',
   },
+  plugins : [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'main', // Move dependencies to main file
+      children: true, // look for common dependencies in all children
+      minChunks: 2, // How many times a dependency must come up before being extracted
+    }),
+  ],
   module: {
     loaders : [
         {
